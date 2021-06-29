@@ -37,7 +37,7 @@ class _HomeState extends State<Home>{
               ),
               node: TimelineNode(
                 indicator: DotIndicator(),
-                startConnector: SolidLineConnector(),
+                startConnector: DashedLineConnector(),
                 endConnector: SolidLineConnector(),
               ),
             ),
@@ -110,7 +110,7 @@ class _HomeState extends State<Home>{
               node: TimelineNode(
                 indicator: DotIndicator(),
                 startConnector: SolidLineConnector(),
-                endConnector: SolidLineConnector(),
+                endConnector: DashedLineConnector(),
               ),
             ),
           ],
