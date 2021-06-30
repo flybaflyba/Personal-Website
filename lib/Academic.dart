@@ -73,7 +73,7 @@ class _AcademicState extends State<Academic>{
               child: Center(
                 child: RichText(
                     text: TextSpan(
-                      children: [clickableTextSpan('Brigham Young University Hawaii', '', context),],
+                      children: [clickableTextSpan('Brigham Young University Hawaii', 'https://www.byuh.edu/', context),],
                       style: TextStyle(fontWeight: FontWeight.bold, ),
                     )
                 ),
