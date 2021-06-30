@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:personalwebsite/Academic.dart';
+import 'package:personalwebsite/AcademicZh.dart';
+import 'package:personalwebsite/Experiences.dart';
+import 'package:personalwebsite/Home.dart';
 
 import 'package:personalwebsite/MyHomePage.dart';
+import 'package:personalwebsite/Projects.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,6 +26,11 @@ class MyApp extends StatelessWidget {
       initialRoute: 'MyHomePage',
       routes: {
         'MyHomePage' : (context) => MyHomePage(title: 'LZ',),
+        'Home' : (context) => Home(),
+        'Projects' : (context) => Projects(),
+        'Academic' : (context) => Academic(),
+        'AcademicZh' : (context) => AcademicZh(),
+        'Experiences' : (context) => Experiences(),
       },
     );
   }

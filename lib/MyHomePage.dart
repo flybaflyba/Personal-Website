@@ -5,6 +5,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personalwebsite/Academic.dart';
+import 'package:personalwebsite/AcademicZh.dart';
 import 'package:personalwebsite/BlankPage.dart';
 import 'package:personalwebsite/Experiences.dart';
 import 'package:personalwebsite/Home.dart';

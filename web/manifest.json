@@ -1,11 +1,11 @@
 {
-    "name": "personalwebsite",
-    "short_name": "personalwebsite",
+    "name": "LZ",
+    "short_name": "LZ",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Litian Zhang's personal website.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
