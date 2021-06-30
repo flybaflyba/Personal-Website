@@ -80,49 +80,61 @@ class _AcademicState extends State<Academic>{
               )
           ),
 
-          Container(
-            width: double.infinity,
-            child: SingleChildScrollView(
-              child: DataTable(
-                sortColumnIndex: _currentSortColumn,
-                sortAscending: _isAscending,
-                headingRowColor: MaterialStateProperty.all(Colors.blue[200]),
-                columns: [
-                  DataColumn(
-                      label: Text('Course', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
-                      onSort: (columnIndex, _) {
-                        sort(columnIndex, 'course');
-                      }
-                  ),
-                  DataColumn(
-                      label: Text('Description', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
-                      onSort: (columnIndex, _) {
-                        sort(columnIndex, 'description');
-                      }
-                  ),
-                  DataColumn(
-                      label: Text('Term', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
-                      // Sorting function
-                      onSort: (columnIndex, _) {
-                        sort(columnIndex, 'term');
-                      }
-                  ),
-                  DataColumn(
-                      label: Text('Grade', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
-                      // Sorting function
-                      onSort: (columnIndex, _) {
-                        sort(columnIndex, 'grade');
-                      }
+          LayoutBuilder(
+            builder: (context, constraints) => SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(minWidth: constraints.minWidth),
+                        child: DataTable(
+                          sortColumnIndex: _currentSortColumn,
+                          sortAscending: _isAscending,
+                          headingRowColor: MaterialStateProperty.all(Colors.blue[200]),
+                          columns: [
+                            DataColumn(
+                                label: Text('Course', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
+                                onSort: (columnIndex, _) {
+                                  sort(columnIndex, 'course');
+                                }
+                            ),
+                            DataColumn(
+                                label: Text('Description', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
+                                onSort: (columnIndex, _) {
+                                  sort(columnIndex, 'description');
+                                }
+                            ),
+                            DataColumn(
+                                label: Text('Term', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
+                                // Sorting function
+                                onSort: (columnIndex, _) {
+                                  sort(columnIndex, 'term');
+                                }
+                            ),
+                            DataColumn(
+                                label: Text('Grade', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
+                                // Sorting function
+                                onSort: (columnIndex, _) {
+                                  sort(columnIndex, 'grade');
+                                }
+                            ),
+                          ],
+                          rows: courseHistory.map((item) {
+                            return DataRow(cells: [
+                              DataCell(Text(item['course'].toString())),
+                              DataCell(Text(item['description'].toString())),
+                              DataCell(Text(item['term'].toString())),
+                              DataCell(Text(item['grade'].toString()))
+                            ]);
+                          }).toList(),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
-                rows: courseHistory.map((item) {
-                  return DataRow(cells: [
-                    DataCell(Text(item['course'].toString())),
-                    DataCell(Text(item['description'].toString())),
-                    DataCell(Text(item['term'].toString())),
-                    DataCell(Text(item['grade'].toString()))
-                  ]);
-                }).toList(),
               ),
             ),
           ),

@@ -386,14 +386,10 @@ class _ExperiencesState extends State<Experiences>{
                   },
                 ),
               ),
-
-
               Padding(
                 padding: EdgeInsets.only(top: 20, bottom: 20),
                 child: tableViewActive ? tableView() : timeLineView(),
               ),
-
-
 
             ],
           ),
