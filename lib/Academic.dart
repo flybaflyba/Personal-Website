@@ -22,7 +22,7 @@ class _AcademicState extends State<Academic>{
   });
 
   void loadCourseHistory() async {
-    String courseHistoryText = await rootBundle.loadString('texts/course_history.txt');
+    String courseHistoryText = await rootBundle.loadString('assets/texts/course_history.txt');
 
     List<String> courseHistoryList= courseHistoryText.split('\n');
 

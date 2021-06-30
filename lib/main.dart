@@ -23,14 +23,14 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       // home: MyHomePage(title: 'LZ',)
-      initialRoute: 'MyHomePage',
+      initialRoute: '/MyHomePage',
       routes: {
-        'MyHomePage' : (context) => MyHomePage(title: 'LZ',),
-        'Home' : (context) => Home(),
-        'Projects' : (context) => Projects(),
-        'Academic' : (context) => Academic(),
-        'AcademicZh' : (context) => AcademicZh(),
-        'Experiences' : (context) => Experiences(),
+        '/MyHomePage' : (context) => MyHomePage(title: 'LZ',),
+        '/Home' : (context) => Home(),
+        '/Projects' : (context) => Projects(),
+        '/Academic' : (context) => Academic(),
+        '/AcademicZh' : (context) => AcademicZh(),
+        '/Experiences' : (context) => Experiences(),
       },
     );
   }

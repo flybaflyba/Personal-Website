@@ -62,7 +62,8 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
-    - assets/texts/
+    - assets/texts/course_history_zh.txt
+    - assets/texts/course_history.txt
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

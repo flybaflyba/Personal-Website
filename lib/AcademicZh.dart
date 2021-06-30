@@ -18,11 +18,11 @@ class _AcademicZhState extends State<AcademicZh>{
   bool _isAscending = true;
 
   List<Map> courseHistory = List.generate(30, (i) {
-    return {"course": "载入中", "description": "载入中", "term": "载入中", "载入中" : "载入中"};
+    return {"course": "载入中", "description": "载入中", "term": "载入中", "grade" : "载入中"};
   });
 
   void loadCourseHistory() async {
-    String courseHistoryText = await rootBundle.loadString('texts/course_history_zh.txt');
+    String courseHistoryText = await rootBundle.loadString('assets/texts/course_history_zh.txt');
 
     List<String> courseHistoryList= courseHistoryText.split('\n');
 
