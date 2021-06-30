@@ -3,7 +3,6 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:personalwebsite/About.dart';
 import 'package:personalwebsite/Academic.dart';
 import 'package:personalwebsite/BlankPage.dart';
 import 'package:personalwebsite/Experiences.dart';
@@ -35,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
-        length: 5,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
             bottom: TabBar(
@@ -44,7 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 Tab(text: 'Projects',),
                 Tab(text: 'Academic',),
                 Tab(text: 'Experiences',),
-                Tab(text: 'About',),
               ],
             ),
             title: Text(widget.title),
@@ -55,7 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
               Projects(),
               Academic(),
               Experiences(),
-              About(),
             ],
           ),
         ),
