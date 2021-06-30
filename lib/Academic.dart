@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:personalwebsite/Universals.dart';
 
 
 class Academic extends StatefulWidget{
@@ -65,52 +66,68 @@ class _AcademicState extends State<Academic>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        child: SingleChildScrollView(
-          child: DataTable(
-            sortColumnIndex: _currentSortColumn,
-            sortAscending: _isAscending,
-            headingRowColor: MaterialStateProperty.all(Colors.blue[200]),
-            columns: [
-              DataColumn(
-                  label: Text('Course', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
-                  onSort: (columnIndex, _) {
-                    sort(columnIndex, 'course');
-                  }
-              ),
-              DataColumn(
-                  label: Text('Description', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
-                  onSort: (columnIndex, _) {
-                    sort(columnIndex, 'description');
-                  }
-              ),
-              DataColumn(
-                  label: Text('Term', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
-                  // Sorting function
-                  onSort: (columnIndex, _) {
-                    sort(columnIndex, 'term');
-                  }
-              ),
-              DataColumn(
-                  label: Text('Grade', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
-                  // Sorting function
-                  onSort: (columnIndex, _) {
-                    sort(columnIndex, 'grade');
-                  }
-              ),
-            ],
-            rows: courseHistory.map((item) {
-              return DataRow(cells: [
-                DataCell(Text(item['course'].toString())),
-                DataCell(Text(item['description'].toString())),
-                DataCell(Text(item['term'].toString())),
-                DataCell(Text(item['grade'].toString()))
-              ]);
-            }).toList(),
+      body: ListView(
+        children: [
+          Container(
+              margin: EdgeInsets.all(20),
+              child: Center(
+                child: RichText(
+                    text: TextSpan(
+                      children: [clickableTextSpan('Brigham Young University Hawaii', ''),],
+                      style: TextStyle(fontWeight: FontWeight.bold, ),
+                    )
+                ),
+              )
           ),
-        ),
-      ),
+
+          Container(
+            width: double.infinity,
+            child: SingleChildScrollView(
+              child: DataTable(
+                sortColumnIndex: _currentSortColumn,
+                sortAscending: _isAscending,
+                headingRowColor: MaterialStateProperty.all(Colors.blue[200]),
+                columns: [
+                  DataColumn(
+                      label: Text('Course', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
+                      onSort: (columnIndex, _) {
+                        sort(columnIndex, 'course');
+                      }
+                  ),
+                  DataColumn(
+                      label: Text('Description', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
+                      onSort: (columnIndex, _) {
+                        sort(columnIndex, 'description');
+                      }
+                  ),
+                  DataColumn(
+                      label: Text('Term', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
+                      // Sorting function
+                      onSort: (columnIndex, _) {
+                        sort(columnIndex, 'term');
+                      }
+                  ),
+                  DataColumn(
+                      label: Text('Grade', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
+                      // Sorting function
+                      onSort: (columnIndex, _) {
+                        sort(columnIndex, 'grade');
+                      }
+                  ),
+                ],
+                rows: courseHistory.map((item) {
+                  return DataRow(cells: [
+                    DataCell(Text(item['course'].toString())),
+                    DataCell(Text(item['description'].toString())),
+                    DataCell(Text(item['term'].toString())),
+                    DataCell(Text(item['grade'].toString()))
+                  ]);
+                }).toList(),
+              ),
+            ),
+          ),
+        ],
+      )
     );
   }
 }
