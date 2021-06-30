@@ -1,6 +1,7 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:personalwebsite/Universals.dart';
 import 'package:thumbnailer/thumbnailer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -11,20 +12,6 @@ class Projects extends StatefulWidget{
 }
 
 class _ProjectsState extends State<Projects>{
-
-  TextSpan clickableText(String text, String url) {
-    return TextSpan(
-        style: TextStyle(color: Colors.blue),
-        text: text,
-        recognizer: TapGestureRecognizer()..onTap =  () async{
-          if (await canLaunch(url)) {
-            await launch(url);
-          } else {
-            throw 'Could not launch $url';
-          }
-        }
-    );
-  }
 
   Widget thumbnailFromAsset(String imageName) {
     return Padding(
@@ -67,27 +54,27 @@ class _ProjectsState extends State<Projects>{
                           children: [
                             TextSpan(text: 'Spiral Visualization for Mobile Devices\n', style: TextStyle(fontWeight: FontWeight.bold)),
                             TextSpan(text: 'Presented at '),
-                            clickableText('the 2021 IEEE Pacific Visualization conference (scroll down to poster #7)', ''),
+                            clickableTextSpan('the 2021 IEEE Pacific Visualization conference (scroll down to poster #7)', ''),
                             TextSpan(text: '.\n'),
                             TextSpan(text: 'We propose an interactive radial visualization of tabular data optimized for mobile devices. Our visualization employs a spiral layout, making it suitable for small handheld touchscreens. Users can view an overview of the data, search for specific items, and access details as needed. As a proof of concept of our visualization metaphor, we have implemented two mobile applications: Temples Timeline and Hundred Chinese Surnames. The first shows a chronology of temples operated by the Church of Jesus Christ of Latter-day Saints from 1836 to the present. The second app provides an interactive visualization of the most common Chinese surnames.\n'),
-                            clickableText('Read the Pacific Visualization paper\n', ''),
-                            clickableText('Hundred Chinese Surnames demo video', ''),
+                            clickableTextSpan('Read the Pacific Visualization paper\n', ''),
+                            clickableTextSpan('Hundred Chinese Surnames demo video', ''),
                             TextSpan(text: " | Download Hundred Chinese Surnames: "),
-                            clickableText('Google Play', ''),
+                            clickableTextSpan('Google Play', ''),
                             TextSpan(text: ' or '),
-                            clickableText('Amazon Appstore\n', ''),
-                            clickableText('Temples Timeline demo video (English)', ''),
+                            clickableTextSpan('Amazon Appstore\n', ''),
+                            clickableTextSpan('Temples Timeline demo video (English)', ''),
                             TextSpan(text: ' | '),
-                            clickableText('Temples Timeline demo video (Chinese)', ''),
+                            clickableTextSpan('Temples Timeline demo video (Chinese)', ''),
                             TextSpan(text: ' | '),
                             TextSpan(text: 'Download Temples Timeline: '),
-                            clickableText('Google Play', ''),
+                            clickableTextSpan('Google Play', ''),
                             TextSpan(text: ' or '),
-                            clickableText('Amazon Appstore', ''),
+                            clickableTextSpan('Amazon Appstore', ''),
                             TextSpan(text: ' or '),
-                            clickableText('Apple App Store\n', ''),
+                            clickableTextSpan('Apple App Store\n', ''),
                             TextSpan(text: 'View it on '),
-                            clickableText('my professor’s page', ''),
+                            clickableTextSpan('my professor’s page', ''),
                             TextSpan(text: '.\n'),
                           ],
                         ),
@@ -119,13 +106,13 @@ class _ProjectsState extends State<Projects>{
                           children: [
                             TextSpan(text: 'BYUH History\n', style: TextStyle(fontWeight: FontWeight.bold)),
                             TextSpan(text: 'Spiral Visualization for '),
-                            clickableText('the brief history ', ''),
+                            clickableTextSpan('the brief history ', ''),
                             TextSpan(text: 'of '),
-                            clickableText('Brigham Young University – Hawaii', ''),
+                            clickableTextSpan('Brigham Young University – Hawaii', ''),
                             TextSpan(text: '. Android and iOS apps awaiting to be published.\nView code on GitHub: '),
-                            clickableText('Android ', ''),
+                            clickableTextSpan('Android ', ''),
                             TextSpan(text: 'and '),
-                            clickableText('iOS', ''),
+                            clickableTextSpan('iOS', ''),
                             TextSpan(text: '.'),
                           ],
                         ),
@@ -152,11 +139,11 @@ class _ProjectsState extends State<Projects>{
                           children: [
                             TextSpan(text: 'Campus Forum\n', style: TextStyle(fontWeight: FontWeight.bold)),
                             TextSpan(text: 'An app built with '),
-                            clickableText('Flutter ', ''),
+                            clickableTextSpan('Flutter ', ''),
                             TextSpan(text: 'that is similar to Facebook where people can make posts and comment on each other. Designed for college students for on-campus communication. This app is a cross-platform project compatible with Android, iOS, and the web.\nView '),
-                            clickableText('code on GitHub', ''),
+                            clickableTextSpan('code on GitHub', ''),
                             TextSpan(text: '.\nTry it out '),
-                            clickableText('here', ''),
+                            clickableTextSpan('here', ''),
                             TextSpan(text: '.'),
                           ],
                         ),
@@ -183,15 +170,15 @@ class _ProjectsState extends State<Projects>{
                           children: [
                             TextSpan(text: 'Request Handing - Tutoring\n', style: TextStyle(fontWeight: FontWeight.bold)),
                             TextSpan(text: 'Built with '),
-                            clickableText('Flutter', ''),
+                            clickableTextSpan('Flutter', ''),
                             TextSpan(text: '. Implemented user authentication and authorization with '),
-                            clickableText('Firebase Authentication', ''),
+                            clickableTextSpan('Firebase Authentication', ''),
                             TextSpan(text: '.  Implemented database connection with '),
-                            clickableText('Firebase Cloud Firestore', ''),
+                            clickableTextSpan('Firebase Cloud Firestore', ''),
                             TextSpan(text: '. Customized views for students/tutors and for each tutor. This app is a cross-platform project compatible with Android, iOS, and the web. \nView '),
-                            clickableText('code on GitHub', ''),
+                            clickableTextSpan('code on GitHub', ''),
                             TextSpan(text: '.\nTry it out '),
-                            clickableText('here', ''),
+                            clickableTextSpan('here', ''),
                             TextSpan(text: '.'),
                           ],
                         ),
@@ -218,15 +205,15 @@ class _ProjectsState extends State<Projects>{
                           children: [
                             TextSpan(text: 'Hundred Chinese Surnames\n', style: TextStyle(fontWeight: FontWeight.bold)),
                             TextSpan(text: 'Spiral Visualization for '),
-                            clickableText('the most commonly used one hundred Chinese surnames in China in 2019', ''),
+                            clickableTextSpan('the most commonly used one hundred Chinese surnames in China in 2019', ''),
                             TextSpan(text: '. App name is taken from a book written in ancient China called '),
-                            clickableText('Hundred Family Surnames', ''),
+                            clickableTextSpan('Hundred Family Surnames', ''),
                             TextSpan(text: '. Android app on '),
-                            clickableText('Google Play ', ''),
+                            clickableTextSpan('Google Play ', ''),
                             TextSpan(text: 'and '),
-                            clickableText('Amazon Appstore', ''),
+                            clickableTextSpan('Amazon Appstore', ''),
                             TextSpan(text: '.\nView '),
-                            clickableText('code on GitHub', ''),
+                            clickableTextSpan('code on GitHub', ''),
                             TextSpan(text: '.'),
                           ],
                         ),
@@ -253,11 +240,11 @@ class _ProjectsState extends State<Projects>{
                           children: [
                             TextSpan(text: 'PlanzApp\n', style: TextStyle(fontWeight: FontWeight.bold)),
                             TextSpan(text: 'An internship project with '),
-                            clickableText('PlanzApp', ''),
+                            clickableTextSpan('PlanzApp', ''),
                             TextSpan(text: '. We used Flutter/Dart to develop Android and ios versions of PlanzApp. Connected app to '),
-                            clickableText(' Google Firebase', ''),
+                            clickableTextSpan(' Google Firebase', ''),
                             TextSpan(text: '. I implemented the plan creation process, user settings, and email notifications. This app is a cross-platform project compatible for Android and iOS. \nView  '),
-                            clickableText(' company website', ''),
+                            clickableTextSpan(' company website', ''),
                             TextSpan(text: '.'),
                           ],
                         ),
@@ -284,21 +271,21 @@ class _ProjectsState extends State<Projects>{
                           children: [
                             TextSpan(text: 'Temples Timeline\n', style: TextStyle(fontWeight: FontWeight.bold)),
                             TextSpan(text: 'Spiral Visualization for '),
-                            clickableText('the temples ', ''),
+                            clickableTextSpan('the temples ', ''),
                             TextSpan(text: 'of '),
-                            clickableText('The Church of Jesus Christ of Latter-day Saints', ''),
+                            clickableTextSpan('The Church of Jesus Christ of Latter-day Saints', ''),
                             TextSpan(text: '. Android app on '),
-                            clickableText('Google Play ', ''),
+                            clickableTextSpan('Google Play ', ''),
                             TextSpan(text: 'and '),
-                            clickableText('Amazon Appstore', ''),
+                            clickableTextSpan('Amazon Appstore', ''),
                             TextSpan(text: ', iOS app on '),
-                            clickableText('App Store', ''),
+                            clickableTextSpan('App Store', ''),
                             TextSpan(text: '.\nView code on GitHub: '),
-                            clickableText('Android ', ''),
+                            clickableTextSpan('Android ', ''),
                             TextSpan(text: 'and '),
-                            clickableText('iOS', ''),
+                            clickableTextSpan('iOS', ''),
                             TextSpan(text: '.\nView '),
-                            clickableText('App page', ''),
+                            clickableTextSpan('App page', ''),
                             TextSpan(text: '.'),
                           ],
                         ),
@@ -325,15 +312,15 @@ class _ProjectsState extends State<Projects>{
                           children: [
                             TextSpan(text: 'Timel Online Store\n', style: TextStyle(fontWeight: FontWeight.bold)),
                             TextSpan(text: 'Built with '),
-                            clickableText('WordPress', ''),
+                            clickableTextSpan('WordPress', ''),
                             TextSpan(text: '. Timel is an entrepreneurship at '),
-                            clickableText('Wills Center ', ''),
+                            clickableTextSpan('Wills Center ', ''),
                             TextSpan(text: 'of '),
-                            clickableText('Brigham Young University – Hawaii', ''),
+                            clickableTextSpan('Brigham Young University – Hawaii', ''),
                             TextSpan(text: '. Timel is an online store business that imports products from China and sells them to its US customer. The '),
-                            clickableText('BYUH bookstore ', ''),
+                            clickableTextSpan('BYUH bookstore ', ''),
                             TextSpan(text: 'was one of its customers. Timel made it to the semi-final list in the '),
-                            clickableText(' Great Idea completion ', ''),
+                            clickableTextSpan(' Great Idea completion ', ''),
                             TextSpan(text: 'held by Wills Center in 2019. Timel was at timelcompany.com.'),
                           ],
                         ),
