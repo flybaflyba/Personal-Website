@@ -1,6 +1,7 @@
 
 
 
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personalwebsite/Academic.dart';
@@ -29,25 +30,34 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+
+  int _currentIndex = 0;
+  PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: DefaultTabController(
-        length: 4,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(text: 'Home',),
-                Tab(text: 'Projects',),
-                Tab(text: 'Academic',),
-                Tab(text: 'Experiences',),
-              ],
-            ),
-            title: Text(widget.title),
-          ),
-          body: TabBarView(
+    return
+      Scaffold(
+        appBar: AppBar(title: Text("Litian Zhang")),
+        body: SizedBox.expand(
+          child: PageView(
+            controller: _pageController,
+            onPageChanged: (index) {
+              setState(() => _currentIndex = index);
+            },
             children: [
               Home(),
               Projects(),
@@ -56,7 +66,58 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-      ),
-    );
+        bottomNavigationBar: BottomNavyBar(
+          selectedIndex: _currentIndex,
+          onItemSelected: (index) {
+            setState(() => _currentIndex = index);
+            _pageController.jumpToPage(index);
+          },
+          items: <BottomNavyBarItem>[
+            BottomNavyBarItem(
+                title: Text('Home'),
+                icon: Icon(Icons.home)
+            ),
+            BottomNavyBarItem(
+                title: Text('Projects'),
+                icon: Icon(Icons.build)
+            ),
+            BottomNavyBarItem(
+                title: Text('Academic'),
+                icon: Icon(Icons.book)
+            ),
+            BottomNavyBarItem(
+                title: Text('Experiences'),
+                icon: Icon(Icons.work)
+            ),
+          ],
+        ),
+      );
+    //   MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   home: DefaultTabController(
+    //     length: 4,
+    //     child: Scaffold(
+    //       appBar: AppBar(
+    //         bottom: TabBar(
+    //           tabs: [
+    //             Tab(text: 'Home',),
+    //             Tab(text: 'Projects',),
+    //             Tab(text: 'Academic',),
+    //             Tab(text: 'Experiences',),
+    //           ],
+    //         ),
+    //         title: Text(widget.title),
+    //       ),
+    //       body: TabBarView(
+    //         children: [
+    //           Home(),
+    //           Projects(),
+    //           Academic(),
+    //           Experiences(),
+    //         ],
+    //       ),
+    //     ),
+    //   ),
+    // );
   }
 }

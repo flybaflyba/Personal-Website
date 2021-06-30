@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(title: 'LZ',)
-      // initialRoute: 'MyHomePage',
-      // routes: {
-      //   'MyHomePage' : (context) => MyHomePage(title: 'LZ',),
-      // },
+      // home: MyHomePage(title: 'LZ',)
+      initialRoute: 'MyHomePage',
+      routes: {
+        'MyHomePage' : (context) => MyHomePage(title: 'LZ',),
+      },
     );
   }
 }
