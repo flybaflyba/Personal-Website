@@ -24,7 +24,7 @@ class _ProjectsState extends State<Projects>{
               .asUint8List();
         },
         mimeType: 'image/webp',
-        widgetSize: 150,
+        widgetSize: MediaQuery.of(context).size.width * 0.2,
       ),
     );
   }
