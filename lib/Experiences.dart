@@ -219,7 +219,7 @@ class _ExperiencesState extends State<Experiences>{
           margin: EdgeInsets.only(top: 10),
           child: RichText(
               text: TextSpan(
-                children: [clickableTextSpan('Brigham Young University Hawaii', ''),],
+                children: [clickableTextSpan('Brigham Young University Hawaii', '', context),],
                 style: TextStyle(fontWeight: FontWeight.bold),
               )
           )
@@ -297,7 +297,7 @@ class _ExperiencesState extends State<Experiences>{
           margin: EdgeInsets.only(top: 10),
           child: RichText(
               text: TextSpan(
-                children: [clickableTextSpan('PlanzApp', ''),],
+                children: [clickableTextSpan('PlanzApp', '', context),],
                 style: TextStyle(fontWeight: FontWeight.bold),
               )
           )
@@ -327,7 +327,7 @@ class _ExperiencesState extends State<Experiences>{
           margin: EdgeInsets.only(top: 10),
           child: RichText(
               text: TextSpan(
-                children: [clickableTextSpan('The Church of Jesus Christ of Latter-Day Saints', ''),],
+                children: [clickableTextSpan('The Church of Jesus Christ of Latter-Day Saints', '', context),],
                 style: TextStyle(fontWeight: FontWeight.bold),
               )
           )
